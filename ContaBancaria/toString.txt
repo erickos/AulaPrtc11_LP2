@@ -1,0 +1,4 @@
+toString()
+
+Tipo de retorno : String, com a representação definida para o objeto.
+Parametros : Não recebe nenhum.
