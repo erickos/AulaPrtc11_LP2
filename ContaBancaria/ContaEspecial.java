@@ -1,3 +1,12 @@
+/**
+ * A bank special account.
+ * Bank special accounts have a unique client, a unique account number, your balance and a limit.
+ * The bank special account balance can be increased (cash deposit, until the defined limit) or decreased (cash out).
+ * @author Erick de O. Silva
+ * @version 2017.08.29
+ */
+
+
 import java.lang.IllegalArgumentException;
 
 public class ContaEspecial extends ContaBancaria
@@ -30,14 +39,25 @@ public class ContaEspecial extends ContaBancaria
 	@Override
 	public double sacar( double saque ) throws IllegalArgumentException
 	{
-		if ( (saldo - saque) < ((-1) * limite) )
+		if ( (getSaldo() - saque) < ((-1) * limite) )
 		{
 			throw new IllegalArgumentException( "The cash out value exceeded the minimun balance defined value!" );
 		} else 
 		{
 			// cash out.
-			return saldo - saque;
+			setSaldo( getSaldo() - saque );
+			return getSaldo() - saque;
 		}
+	}
+
+	/**
+	 * Informs the String representation of this Account.
+	 * @return String representation of this Account.
+	 */
+	@Override
+	public String toString()
+	{	
+		return ">>> Special Account <<<\n" + super.toString() + "Account Limit : " + limite + "\n";
 	}
 	
 }

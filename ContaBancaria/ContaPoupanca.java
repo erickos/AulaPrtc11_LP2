@@ -1,6 +1,6 @@
-/**
- * A savings.
- * The savings has a income day.
+/**	\\
+ * A savings account.
+ * The savings account have a unique client, a unique account number, your balance and a income day.
  * And calculates the new balance in this day.
  * @author Erick de O. Silva
  * @version 2017.08.29
@@ -47,6 +47,6 @@ public class ContaPoupanca extends ContaBancaria
 	@Override
 	public String toString()
 	{	
-		return super.toString() + "Day of income : " + dia_de_rendimento + "\n";
+		return ">>> Savings Account <<<\n" + super.toString() + "Day of income : " + dia_de_rendimento + "\n";
 	}
 }

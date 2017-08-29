@@ -1,9 +1,13 @@
-import java.lang.IllegalArgumentException;
 /**
  * A bank account.
  * Bank accounts have a unique client, a unique account number and your balance.
  * The bank account balance can be increased (cash deposit) or decreased (cash out).
+ * @author Erick de O. Silva
+ * @version 2017.08.29
  */
+
+
+import java.lang.IllegalArgumentException;
 public class ContaBancaria
 {	
 	// A unique client for this account.
@@ -28,6 +32,24 @@ public class ContaBancaria
 	}
 
 	/**
+	 * Informs the name
+	 * @return Client's name.
+	 */
+	public String getCliente()
+	{
+		return cliente;
+	}
+
+	/**
+	 * Informs the account number.
+	 * @return account number.
+	 */
+	public int getNumConta()
+	{
+		return num_conta;
+	}
+
+	/**
 	 * Informs the actual balance.
 	 * @return Actual balance.
 	 */
@@ -35,8 +57,20 @@ public class ContaBancaria
 	{
 		return saldo;
 	}
+
+
 	
 	/**
+	 * Gerency the balance.
+	 * @param New balance.
+	 */
+	public void setSaldo( double novo_saldo )
+	{
+		saldo = novo_saldo;
+	}
+
+
+	/*
 	 * Cash out.
 	 * @param saque Value to be decreased of this account.
 	 * @throws IllegalArgumentException if the 'saque' value is negative or bigger than balance of this account.
@@ -47,11 +81,11 @@ public class ContaBancaria
 		if ( saque <= 0.0 || saque > saldo )
 		{
 			throw new IllegalArgumentException( "Enter with a valid value to cash out! ( 0.0 < value <= account_balance )" );
-		} else 
-		{	
-			// cash out.
-			return saldo -= saque;
 		}
+
+		// cash out.
+		saldo -= saque;
+		return saldo;
 	}
 
 	
@@ -66,11 +100,11 @@ public class ContaBancaria
 		if ( deposito <= 0.0 )
 		{
 			throw new IllegalArgumentException( "Enter with a valid deposit value! ( value > 0.0 )" );
-		} else 
-		{
-			// cash deposit.
-			return saldo += deposito;
-		}		
+		}
+		
+		// cash deposit.
+		saldo += deposito;
+		return saldo;	
 	}
 
 	/**
@@ -81,6 +115,20 @@ public class ContaBancaria
 	public String toString()
 	{
 		return "Client name : " + cliente + "\nAccount ID : " + num_conta + "\nActual account Balance : " + saldo + "\n";
+	}
+
+	/**
+	 * Compare one account with another.
+	 * @return True if his client name and account number are equals, False in otherwise.
+	 */
+	public boolean equals( ContaBancaria conta ) 
+	{
+    	if ( this.cliente == conta.getCliente() 
+    		&& this.num_conta == conta.getNumConta()  )
+    	{
+        	return true;
+    	}
+    	return false;
 	}
 
 }   
