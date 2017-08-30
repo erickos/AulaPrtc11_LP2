@@ -1,7 +1,7 @@
 
 /**
  * A client.
- * The client hava name, address and phone number.
+ * The client have name, address and phone number.
  *
  * @author Erick de O. Silva
  * @version 2017.08.29
@@ -58,7 +58,8 @@ public class Cliente
 	}
 
 	/**
-	 *
+	 * Set the client's name.
+	 * @param nome Client's name.
 	 */
 	public void setNome( String nome )
 	{
@@ -66,19 +67,31 @@ public class Cliente
 	}
 
 	/**
-	 *
+	 * Set the client's address.
+	 * @param endereco Client's address.
 	 */
-	public void setEndereco( String endereço )
+	public void setEndereco( String endereco )
 	{
 		this.endereco = endereco;
 	}
 
 	/**
-	 *
+	 * Set the client's phone number.
+	 * @param telefone Client's phone number.
 	 */
 	public void setTelefone( String telefone )
 	{
 		this.telefone = telefone;
+	}
+
+	/**
+	 * Convert a client object to a String representation.
+	 * @return The String representation of this client.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Name : " + nome + "\nAddress : " + endereco + "\nPhone number : " + telefone;
 	}
 
 }
