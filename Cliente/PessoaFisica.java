@@ -15,6 +15,7 @@ public class PessoaFisica extends Cliente
 
 	/**
 	 * Physical client constructor.
+	 * 
 	 * @param nome Physical client's name.
 	 * @param endereco Physical client's address.
 	 * @param telefone Physical client's phone number.
@@ -29,6 +30,7 @@ public class PessoaFisica extends Cliente
 
 	/**
 	 * Returns the client's phone number.
+	 * 
 	 * @return Client's cpf.
 	 */
 	public String getCpf()
@@ -38,6 +40,7 @@ public class PessoaFisica extends Cliente
 
 	/**
 	 * Set the client's name.
+	 * 
 	 * @param cpf Client's cpf.
 	 */
 	public void setCpf( String cpf )
@@ -48,6 +51,7 @@ public class PessoaFisica extends Cliente
 
 	/**
 	 * Convert a physical client object to a String representation.
+	 * 
 	 * @return The String representation of this physical client.
 	 */
 	@Override
@@ -57,6 +61,9 @@ public class PessoaFisica extends Cliente
 	}
 
 
+	/**
+	 * Prints all the physical client data.
+	 */
 	public void imprimirDados()
 	{
 		System.out.println( toString() );

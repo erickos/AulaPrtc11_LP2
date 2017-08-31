@@ -40,6 +40,16 @@ public class Banco
 	}
 
 	/**
+	 * Informs the quantity of accounts.
+	 *
+	 * @return Quantity of accounts.
+ 	 */
+	public int qtdContas()
+	{
+		return contas.size();
+	}
+
+	/**
 	 * Prints all saved accounts on database.
 	 */
 	public void showAll()
