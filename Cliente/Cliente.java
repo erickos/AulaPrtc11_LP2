@@ -1,4 +1,3 @@
-
 /**
  * A client.
  * The client have name, address and phone number.

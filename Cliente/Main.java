@@ -10,7 +10,7 @@ public class Main
 	{
 		// Instantiates two types of clients.
 		PessoaJuridica client1 = new PessoaJuridica( "erick", "rua 1", "0800", "01281-7", "fantasy" );
-		PessoaFisica client2 = new PessoaFisica( "1erick", "1rua 1", "10800", "101281-7");
+		PessoaFisica client2 = new PessoaFisica( "test", "rua 2", "1080", "1012-7" );
 
 		// Init a client's database.
 		Database banco = new Database();
